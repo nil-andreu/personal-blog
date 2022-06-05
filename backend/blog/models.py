@@ -6,13 +6,20 @@ class Category(models.Model):
     
     def __str__(self):
         return self.category
-
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+        
 class Tag(models.Model):
     tag = models.CharField(max_length=100, unique=True, primary_key=True)
     
     def __str__(self):
         return self.tag
 
+    class Meta:
+        verbose_name = 'Tag'
+        verbose_name_plural = 'Tags'
+    
 # Create your models here.
 class Post(models.Model):
     # Title section
@@ -35,10 +42,17 @@ class Post(models.Model):
         super(Post, self).save(*args, **kwargs)
     
     class Meta:
-        ordering = ('-publish', 'title', 'status')
+        ordering = ('-publish', 'title', 'status',)
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
     
     def __str__(self):
         return self.title
+
+class Visit(models.Model):
+    # view = models.IntegerField() Each row will be +1
+    date = models.DateTimeField(auto_now=True)
+    post = models.ForeignKey(Post, on_delete=models.PROTECT)
 
 class Coments(models.Model):
     comment = models.CharField(max_length=400, unique=False, blank=False, null=False)

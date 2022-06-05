@@ -9,7 +9,7 @@ class PostAdmin(admin.ModelAdmin):
         'title', 'category', 'tags','status',
     )
     
-    list_display = ('title', 'category', 'tags', 'publish','status',)
+    list_display = ('title', 'body','category', 'tags', 'publish','status',)
     list_filter = ('status',)
     search_fields = ('title', 'body',)
     
