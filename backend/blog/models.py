@@ -29,7 +29,7 @@ class Post(models.Model):
     
     # Define category and subcategory
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
-    tags = models.ForeignKey(Tag, on_delete=models.PROTECT)
+    tags = models.ManyToManyField(Tag)
     
     # Important dates of the blog
     publish = models.DateTimeField(auto_now_add=True)
@@ -42,7 +42,7 @@ class Post(models.Model):
         super(Post, self).save(*args, **kwargs)
     
     class Meta:
-        ordering = ('-publish', 'title', 'status',)
+        ordering = ('publish', 'title', 'status',)
         verbose_name = 'Post'
         verbose_name_plural = 'Posts'
     
