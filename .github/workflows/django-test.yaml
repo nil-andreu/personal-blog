@@ -25,7 +25,7 @@ jobs:
       
       - name: Run tests
         run: |
-          cd backend && pytest
+          cd backend && make test
     
   quality:
     runs-on: ubuntu-latest
