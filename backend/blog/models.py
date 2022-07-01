@@ -12,11 +12,11 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
-        
+
 
 class Tag(models.Model):
     tag = models.CharField(max_length=100, unique=True,
-                            primary_key=True)
+                           primary_key=True)
 
     def __str__(self):
         return self.tag
@@ -34,7 +34,7 @@ class Post(models.Model):
     slug = models.SlugField(unique=True)
     body = models.TextField()
     # Define category and subcategory
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, 
+    category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  blank=True, null=True)
     tags = models.ManyToManyField(Tag)
     # Important dates of the blog
@@ -63,7 +63,7 @@ class Visit(models.Model):
 
 
 class Comemnts(models.Model):
-    comment = models.CharField(max_length=400, unique=False, 
+    comment = models.CharField(max_length=400, unique=False,
                                blank=False, null=False)
     user = models.CharField(max_length=100)
     email = models.EmailField(blank=True, null=True)
