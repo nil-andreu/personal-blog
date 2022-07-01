@@ -2,6 +2,11 @@
 In this personal blog application, I will handle blog posts, my portfolio, as well as my professional online profile.
 It is developed following the Test-Driven Development principles, both unit tests and integration tests.
 
+In the Makefile, you can find some automation of utilities for the backend:
+```
+
+```
+
 Some of the most relevant technos I am using are the following.
 
 # GitHub Actions
