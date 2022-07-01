@@ -7,9 +7,8 @@ class PostAdmin(admin.ModelAdmin):
 
     # Do not include the slug when creating a new on the admin
     fields = (
-        'title', 'body', 'category', 'tags', 'status', 
+        'title', 'body', 'category', 'tags', 'status',
     )
-    
     list_display = ('title', 'category', 'publish', 'status', )
     list_filter = ('status', )
     search_fields = ('title', 'body', )
@@ -17,7 +16,6 @@ class PostAdmin(admin.ModelAdmin):
 
 class VisitAdmin(admin.ModelAdmin):
     model = Visit
-    
     list_display = ('post', 'date', )
     list_filter = ('post', 'date', )
     search_fields = ('post__title', 'date', )
