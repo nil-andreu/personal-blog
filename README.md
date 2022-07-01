@@ -7,9 +7,9 @@ Some of the most relevant technos I am using are the following.
 # GitHub Actions
 To automate the test on when pushing the code to the respository.
 
-I am testing both:
+For the backend, it focuses on testing:
 - Functionality: that the code is working well
-- Code Quality: automating checks of the code quality and persistance
+- Code Quality: automating checks of the code quality and persistance with PEP8
 
 If we run this utility for GitHub Actions:
 ```
