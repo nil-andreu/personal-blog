@@ -27,14 +27,14 @@ class Tag(models.Model):
 class Post(models.Model):
     # Title section
     title=models.CharField(blank=False, null=False, unique=True, 
-                             max_length=200)
+                            max_length=200)
     
     slug=models.SlugField(unique=True)
     body=models.TextField()
     
     # Define category and subcategory
     category=models.ForeignKey(Category, on_delete=models.CASCADE, 
-                                 blank=True, null=True)
+                                blank=True, null=True)
     tags=models.ManyToManyField(Tag)
     
     # Important dates of the blog
