@@ -12,7 +12,6 @@ import pytest
 def test_new_post():
     """ Test if with a simple word, the slug is created correctly
     """
-    
     new_post = Post(title='title')
     new_post.save()
     assert new_post.slug == 'title'
@@ -23,7 +22,6 @@ def test_new_post():
 def test_complex_title():
     """ Multi-word title is created correctly
     """
-    
     new_post = Post(title='New Complex Title')
     new_post.save()
     assert new_post.slug == 'new-complex-title'

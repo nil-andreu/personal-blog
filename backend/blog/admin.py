@@ -4,7 +4,6 @@ from .models import Post, Category, Tag, Visit
 
 class PostAdmin(admin.ModelAdmin):
     model = Post
-
     # Do not include the slug when creating a new on the admin
     fields = (
         'title', 'body', 'category', 'tags', 'status',
@@ -22,7 +21,7 @@ class VisitAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(Post,PostAdmin, )
+admin.site.register(Post, PostAdmin, )
 admin.site.register(Category, )
 admin.site.register(Tag, )
 admin.site.register(Visit, VisitAdmin, )
