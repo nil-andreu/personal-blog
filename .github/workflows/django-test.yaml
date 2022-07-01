@@ -1,0 +1,40 @@
+name: Django Test
+
+on:
+  push: 
+    branches: [backend, master] 
+    pull_requests: [backend, master]
+
+actions:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Obtain the code from repo
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Python version
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      
+      - name: Install Requirements
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Run tests
+        run: |
+          cd backend && pytest
+    
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      
+      - name: Run PEP8
+        uses: quentinguidee/pep8-action@v1
+        with:
+          arguments: '--max-line-length=79'
+
+
