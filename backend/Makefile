@@ -4,3 +4,6 @@ migrations:
 
 user:
 	python3 manage.py createsuperuser
+
+test:
+	pytest
