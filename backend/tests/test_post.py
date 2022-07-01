@@ -39,4 +39,3 @@ def test_complex_title_multiple():
         
         later_post=Post(title='New Complex Title')
         later_post.save()
-    

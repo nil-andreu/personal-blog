@@ -36,7 +36,8 @@ jobs:
       - name: Run PEP8
         uses: quentinguidee/pep8-action@v1
         with:
-          arguments: '--max-line-length=79
-            --exclude=*/migrations'
+          arguments: |
+          ' --exclude=*/migrations
+            --max-line-length=120'
 
 

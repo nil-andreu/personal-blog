@@ -44,7 +44,7 @@ class Post(models.Model):
     
     def save(self, *args, **kwargs):
         # We create the slug based on the title of the post
-        self.slug=slugify(self.title) # lower-case-guions
+        self.slug=slugify(self.title)  # lower-case-guions
         super(Post, self).save(*args, **kwargs)
     
     class Meta:
@@ -65,4 +65,4 @@ class Comemnts(models.Model):
                                blank=False, null=False)
     user=models.CharField(max_length=100)
     email=models.EmailField(blank=True, null=True)
-    post=models.ForeignKey(Post, on_delete=models.CASCADE) # When post deleted, delete all the other things
+    post=models.ForeignKey(Post, on_delete=models.CASCADE)  # When post deleted, delete all the other things
