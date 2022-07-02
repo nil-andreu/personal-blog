@@ -5,16 +5,17 @@ import { Link as AnimateLink } from "react-scroll";
 import scrollFunction from "../utilities/scrollFunction";
 
 function Navbar() {
-    // Creationg of the Text Links
+  // Creationg of the Text Links
   const textLink: { [key: string]: string } = {
     journey: "My Journey",
     skills: "My Skills",
-    contact: "Contact"
-    
+    contact: "Contact",
   };
 
   // Adding interactivity when user scrolls
-  window.onscroll = function() {scrollFunction()};
+  window.onscroll = function () {
+    scrollFunction();
+  };
 
   return (
     <Container id="navbar">
@@ -41,7 +42,7 @@ function Navbar() {
 }
 
 const Container = styled.div`
-position: fixed;
+  position: fixed;
   margin: 0 0 auto 0;
   width: 100vw;
   height: 10vh;
@@ -50,11 +51,13 @@ position: fixed;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  transition: height 1s, opacity 1s;
 
   &:hover {
-      // In the case of hover, we overwrite the scrollFunction values
-      opacity: 1 !important;
-      background-color: ${(props) => props.theme.background} !important;
+    // In the case of hover, we overwrite the scrollFunction values
+    opacity: 1 !important;
+    height: 10vh !important;
+    background-color: ${(props) => props.theme.background} !important;
   }
 `;
 

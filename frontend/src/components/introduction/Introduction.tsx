@@ -48,6 +48,7 @@ const Text = styled.h4`
 const Image = styled.img`
     width: 35vw;
     height: 45vh;
+    margin: 15vh 0 0 0 ;
 `
 
 export default Introduction
