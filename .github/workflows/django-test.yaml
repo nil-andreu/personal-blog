@@ -24,15 +24,14 @@ jobs:
           pip install -r requirements.txt
       
       - name: Create env file with Secret Key
-        with:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          
-        env: 
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        uses: ./.github/actions/dotenv-action
+
+        # env: 
+        #   SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
         run: |
           touch ./backend/.env
-          cat $SECRET_KEY
+          cat ${{ steps.dotenv.outputs.SECRET_KEY }}
           # echo SECRET_KEY = "${{SECRET_KEY}}" >> ./backend/.env
           # cat ./backend/.env
           
