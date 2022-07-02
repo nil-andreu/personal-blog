@@ -10,7 +10,10 @@ In the Makefile, you can find some automation of utilities for the backend:
 ```
 
 Some of the most relevant technos I am using are the following.
+<<<<<<< HEAD
+=======
 
+>>>>>>> 414f42585d5f10af5ad70b3fabeba9f27e02c743
 # GitHub Actions
 To automate the test on when pushing the code to the respository.
 

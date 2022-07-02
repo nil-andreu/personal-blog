@@ -6,8 +6,8 @@ function App() {
   const [count, setCount] = useState(0)
   const theme = {
     background: '#011C27',
-    button: '#50D8D7',
-    button_hover: '#064189',
+    button: '#00f756',
+    button_hover: '#00FF7F',
   }
 
   return (
