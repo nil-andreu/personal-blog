@@ -23,7 +23,7 @@ function Navbar() {
             to={key}
             spy={true}
             smooth={true}
-            offset={-70}
+            offset={-100}
             duration={500}
           >
             {textLink[key]}
@@ -48,10 +48,17 @@ position: fixed;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+
+  &:hover {
+      // In the case of hover, we overwrite the scrollFunction values
+      opacity: 1 !important;
+      background-color: ${(props) => props.theme.background} !important;
+  }
 `;
 
 const TextLink = styled(AnimateLink)`
   color: white;
+  padding: 1.5rem;
 
   &:hover {
     cursor: pointer;
