@@ -1,15 +1,16 @@
 import os
+import string
 import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 django.setup()
-from blog.models import Post
+from blog.models import Post, Tag, Category, Visit
 import pytest
 # We need to define environment and setting the django setup to be able to import django models
 
 
-# Mark this test --> test function must start with test_
+# UNIT TESTING
 @pytest.mark.django_db
-def test_new_post():
+def test_new_post() -> bool:
     """ Test if with a simple word, the slug is created correctly
     """
     new_post = Post(title='title')
@@ -19,7 +20,7 @@ def test_new_post():
 
 
 @pytest.mark.django_db
-def test_complex_title():
+def test_complex_title() -> bool:
     """ Multi-word title is created correctly
     """
     new_post = Post(title='New Complex Title')
@@ -28,7 +29,7 @@ def test_complex_title():
 
 
 @pytest.mark.django_db
-def test_complex_title_multiple():
+def test_complex_title_multiple() -> bool:
     """ When a complex title is repeated multiple times, to except a certain behavior
     """
     with pytest.raises(Exception):
@@ -36,3 +37,24 @@ def test_complex_title_multiple():
         first_post.save()
         later_post = Post(title='New Complex Title')
         later_post.save()
+
+# INTEGRATION TESTING
+@pytest.mark.django_db
+def test_relations_tag_post() -> bool:
+    """Integration test between the table ot Tags and Posts
+    """
+    new_tag = Tag(tag="Machine Learning")
+    new_tag.save()
+    new_post = Post(title="New Post")
+    new_post.save()
+    new_post.tags.add("Machine Learning")  # Because of Many-to-Many relationship, need to be added this way
+    assert True
+
+@pytest.mark.django_db
+def test_relations_category_post() -> bool:
+    new_category: string = Category(category="New Category")
+    new_category.save()
+    new_post = Post(title="New Post", category=new_category)  # category needs to be a category instance
+    new_post.save()
+    # new_post.category.add("New Category")
+    
