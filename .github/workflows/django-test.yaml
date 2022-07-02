@@ -24,6 +24,9 @@ jobs:
           pip install -r requirements.txt
       
       - name: Create env file with Secret Key
+        with:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          
         env: 
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
