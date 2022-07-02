@@ -25,9 +25,9 @@ jobs:
       
       - name: Run tests
         run: |
-          cd backend && pytest
+          cd backend && make test
     
-  quality:
+  code-quality:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code 
@@ -36,6 +36,8 @@ jobs:
       - name: Run PEP8
         uses: quentinguidee/pep8-action@v1
         with:
-          arguments: '--max-line-length=79'
+          arguments: ' --exclude=test_post /backend/tests
+            --exclude=* ./backend/blog/migrations
+            --max-line-length=120'
 
 
