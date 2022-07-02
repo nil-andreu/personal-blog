@@ -1,6 +1,8 @@
+from datetime import datetime
 import string
 from django.db import models
 from django.utils.text import slugify
+from typing import Iterator, TypeVar, Generic, Optional
 
 
 class Category(models.Model):
@@ -32,40 +34,40 @@ class Post(models.Model):
     # Title section
     title: string = models.CharField(blank=False, null=False, unique=True,
                              max_length=200)
-    slug = models.SlugField(unique=True)
-    body = models.TextField()
+    slug: string = models.SlugField(unique=True)
+    body: string = models.TextField()
     # Define category and subcategory
-    category = models.ForeignKey(Category, on_delete=models.CASCADE,
+    category: string = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  blank=True, null=True)
-    tags = models.ManyToManyField(Tag)
+    tags: string = models.ManyToManyField(Tag)
     # Important dates of the blog
-    publish = models.DateTimeField(auto_now_add=True)
-    edited = models.DateTimeField(auto_now=True)
-    status = models.BooleanField(default=True)
+    publish: datetime = models.DateTimeField(auto_now_add=True)
+    edited: datetime = models.DateTimeField(auto_now=True)
+    status: bool = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
         # We create the slug based on the title of the post
-        self.slug = slugify(self.title)  # lower-case-guions
+        self.slug: string = slugify(self.title)  # lower-case-guions
         super(Post, self).save(*args, **kwargs)
 
     class Meta:
-        ordering = ('publish', 'title', 'status', )
-        verbose_name = 'Post'
-        verbose_name_plural = 'Posts'
+        ordering: tuple = ('publish', 'title', 'status', )
+        verbose_name: string = 'Post'
+        verbose_name_plural: string = 'Posts'
 
-    def __str__(self):
+    def __str__(self) -> string:
         return self.title
 
 
 class Visit(models.Model):
     # view = models.IntegerField() Each row will be +1
-    date = models.DateTimeField(auto_now=True)
-    post = models.ForeignKey(Post, on_delete=models.PROTECT)
+    date: datetime = models.DateTimeField(auto_now=True)
+    post: int = models.ForeignKey(Post, on_delete=models.PROTECT)
 
 
-class Comemnts(models.Model):
-    comment = models.CharField(max_length=400, unique=False,
+class Comments(models.Model):
+    comment: string = models.CharField(max_length=400, unique=False,
                                blank=False, null=False)
-    user = models.CharField(max_length=100)
-    email = models.EmailField(blank=True, null=True)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)  # When post deleted, delete all the other things
+    user: string = models.CharField(max_length=100)
+    email: string = models.EmailField(blank=True, null=True)
+    post: int = models.ForeignKey(Post, on_delete=models.CASCADE)  # When post deleted, delete all the other things
