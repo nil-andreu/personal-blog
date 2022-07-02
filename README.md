@@ -16,7 +16,7 @@ To automate the test on when pushing the code to the respository.
 
 For the backend, it focuses on testing:
 - **Functionality**: that the code is working well
-- **Code Quality**: automating checks of the code quality and persistance with PEP8
+- **Code Quality**: automating checks of the code quality and persistance with PEP8, as well as type hinting.
 
 If we run this utility for GitHub Actions:
 ```
