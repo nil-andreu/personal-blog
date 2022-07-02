@@ -24,10 +24,13 @@ jobs:
           pip install -r requirements.txt
       
       - name: Create env file with Secret Key
+        env:
+          SECRET_KEY = ${{ secrets.SECRET_KEY }}
+
         run: |
           touch ./backend/.env
-          cat ${{ secrets.SECRET_KEY }}
-          echo SECRET_KEY = ${{ secrets.SECRET_KEY }} >> ./backend/.env
+          cat ${#SECRET_KEY}
+          echo SECRET_KEY = ${#SECRET_KEY} >> ./backend/.env
           cat ./backend/.env
           
       - name: Run tests
