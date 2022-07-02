@@ -1,35 +1,36 @@
+import string
 from django.db import models
 from django.utils.text import slugify
 
 
 class Category(models.Model):
-    category = models.CharField(max_length=200, unique=True,
+    category: string = models.CharField(max_length=200, unique=True,
                                 primary_key=True)
 
-    def __str__(self):
+    def __str__(self) -> string:
         return self.category
 
     class Meta:
-        verbose_name = 'Category'
-        verbose_name_plural = 'Categories'
+        verbose_name: string = 'Category'
+        verbose_name_plural: string = 'Categories'
 
 
 class Tag(models.Model):
-    tag = models.CharField(max_length=100, unique=True,
+    tag: string = models.CharField(max_length=100, unique=True,
                            primary_key=True)
 
-    def __str__(self):
+    def __str__(self) -> string:
         return self.tag
 
     class Meta:
-        verbose_name = 'Tag'
-        verbose_name_plural = 'Tags'
+        verbose_name: string = 'Tag'
+        verbose_name_plural: string = 'Tags'
 
 
 # Create your models here.
 class Post(models.Model):
     # Title section
-    title = models.CharField(blank=False, null=False, unique=True,
+    title: string = models.CharField(blank=False, null=False, unique=True,
                              max_length=200)
     slug = models.SlugField(unique=True)
     body = models.TextField()
