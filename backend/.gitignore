@@ -5,6 +5,7 @@ db.sqlite3
 migrations/
 media/
 .env
+.pyest_cache/
 
 # C extensions
 *.so
