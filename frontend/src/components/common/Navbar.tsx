@@ -8,7 +8,9 @@ function Navbar() {
     // Creationg of the Text Links
   const textLink: { [key: string]: string } = {
     journey: "My Journey",
-    contact: "Contact",
+    skills: "My Skills",
+    contact: "Contact"
+    
   };
 
   // Adding interactivity when user scrolls
