@@ -7,6 +7,10 @@ function Introduction() {
     <Container>
         <ContainerText>
             <Title>Nil Andreu</Title>
+            <Text>
+                I am a self-taught software developer who loves learning new things. Started coding 3 years ago,
+                and I am being more motivated to improve as the time passes.
+            </Text>
         </ContainerText>
         <Image src={image} alt="" />
     </Container>
@@ -23,12 +27,22 @@ const Container = styled.div`
 `
 
 const ContainerText = styled.div`
-    width: 50vw;
+    width: 45vw;
     height: auto;
+    display: flex;
+    flex-direction: column;
 `
 
 const Title = styled.h1`
+    font-size: 3rem;
+    margin: 20vh 0 0  5vw;
+    // margin-left: 5rem;
+`
 
+const Text = styled.h4`
+    font-weight: 200;
+    font-size: 2rem;
+    margin: 5vh 0 0 5vw;
 `
 
 const Image = styled.img`

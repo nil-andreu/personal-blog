@@ -12,12 +12,12 @@ function Button(props: ButtonProps) {
 }
 
 const Container = styled.div`
+    width: 10rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius : 10px;
-    width: 10rem;
-    height: 3rem;
     background-color: ${props => props.theme.button};
 
     &:hover {
