@@ -26,7 +26,7 @@ function Navbar() {
             to={key}
             spy={true}
             smooth={true}
-            offset={-100}
+            // offset={-30}
             duration={500}
           >
             {textLink[key]}
@@ -52,6 +52,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-around;
   transition: height 1s, opacity 1s;
+  z-index: 5;
 
   &:hover {
     // In the case of hover, we overwrite the scrollFunction values
