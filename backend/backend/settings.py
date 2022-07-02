@@ -15,7 +15,10 @@ config = dotenv_values(".env")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = config['SECRET_KEY']  # take environment variables from .env.
+try:    
+    SECRET_KEY = config['SECRET_KEY']  # take environment variables from .env.
+except:
+    pass
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
