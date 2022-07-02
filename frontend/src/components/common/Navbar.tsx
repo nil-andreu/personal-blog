@@ -4,7 +4,10 @@ import Button from './Button'
 
 function Navbar() {
   return (
-    <Container><Button /></Container>
+    <Container>
+        <Button>Projects</Button>
+        <Button>Blog</Button>
+    </Container>
   )
 }
 
