@@ -1,9 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Button() {
+interface ButtonProps {
+    children?: React.ReactNode;
+}
+
+function Button(props: ButtonProps) {
   return (
-    <Container><p>Projects</p></Container>
+    <Container>{props.children}</Container>
   )
 }
 
@@ -19,15 +23,12 @@ const Container = styled.div`
     &:hover {
         background-color: ${props => props.theme.button_hover};
         cursor: pointer;
-
-        p {
-            color: white;
-        }
+        border: 0.5px solid white;
+        transform: scale(1.05);
     }
 
     p {
         color: ${props => props.theme.background};
-
     }
 `
 
