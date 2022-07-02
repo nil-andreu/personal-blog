@@ -3,7 +3,7 @@ import string
 import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 django.setup()
-from blog.models import Post, Tag, Category, Visit
+from blog.models import Post, Tag, Category, Visit, Comments
 import pytest
 # We need to define environment and setting the django setup to be able to import django models
 
@@ -48,7 +48,6 @@ def test_relations_tag_post() -> bool:
     new_post = Post(title="New Post")
     new_post.save()
     new_post.tags.add("Machine Learning")  # Because of Many-to-Many relationship, need to be added this way
-    assert True
 
 @pytest.mark.django_db
 def test_relations_category_post() -> bool:
@@ -57,4 +56,17 @@ def test_relations_category_post() -> bool:
     new_post = Post(title="New Post", category=new_category)  # category needs to be a category instance
     new_post.save()
     # new_post.category.add("New Category")
-    
+
+@pytest.mark.django_db
+def test_relations_visit_post() -> bool:
+    new_post = Post(title="New Post")
+    new_post.save()
+    new_visit = Visit(post=new_post)
+    new_visit.save()
+
+@pytest.mark.django_db
+def test_relations_comment_post() -> bool:
+    new_post = Post(title="New Post")
+    new_post.save()
+    new_comment = Comments(comment="New Comment", user="New User", post=new_post)
+    new_comment.save()
