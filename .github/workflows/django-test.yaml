@@ -29,8 +29,8 @@ jobs:
 
         run: |
           touch ./backend/.env
-          cat ${#SECRET_KEY}
-          echo SECRET_KEY = ${#SECRET_KEY} >> ./backend/.env
+          cat $SECRET_KEY
+          echo SECRET_KEY = $SECRET_KEY >> ./backend/.env
           cat ./backend/.env
           
       - name: Run tests
