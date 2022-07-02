@@ -25,12 +25,10 @@ jobs:
       
       - name: Create env file with Secret Key
         env:
-          SECRET_KEY = {{ secrets.SECRET_KEY }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
         run: |
-          cat $SECRET_KEY 
           touch ./backend/.env
-          cat $SECRET_KEY 
           echo SECRET_KEY = $SECRET_KEY >> ./backend/.env
           cat ./backend/.env
           
