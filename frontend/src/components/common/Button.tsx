@@ -7,7 +7,7 @@ interface ButtonProps {
 
 function Button(props: ButtonProps) {
   return (
-    <Container>{props.children}</Container>
+    <Container id="button">{props.children}</Container>
   )
 }
 
