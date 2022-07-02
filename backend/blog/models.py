@@ -39,7 +39,7 @@ class Post(models.Model):
     # Define category and subcategory
     category: string = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  blank=True, null=True)
-    tags: string = models.ManyToManyField(Tag)
+    tags: string = models.ManyToManyField(Tag, blank=True, null=True)
     # Important dates of the blog
     publish: datetime = models.DateTimeField(auto_now_add=True)
     edited: datetime = models.DateTimeField(auto_now=True)
