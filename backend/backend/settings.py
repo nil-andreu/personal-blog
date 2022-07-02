@@ -123,9 +123,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "build/static") # build of the frontend
+    os.path.join(BASE_DIR, "build/static")  # build of the frontend
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "static") # when collect statis by django
+STATIC_ROOT = os.path.join(BASE_DIR, "static")  # when collect statis by django
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
