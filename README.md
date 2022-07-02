@@ -32,5 +32,10 @@ If we run this utility for GitHub Actions:
 We will get an overview of all workflow we have defined, whether they are triggered via  push, pull request, ...
 
 
-# Docker
-I am using Docker to containerize my application, so it can be easily deployed on a server.
+# Docker && AWS
+I am using Docker to containerize my application, so it can be easily deployed on a server EC2 in AWS.
+The simple CI/CD pipeline will be the following when pushing to main branch:
+1. Making Integration test with GitHub Actions
+2. Creationg of Docker image with GitHub Actions
+3. Pushing Docker image to ECS of AWS
+4. Deploy the image from ECS to EC2

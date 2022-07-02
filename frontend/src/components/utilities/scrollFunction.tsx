@@ -8,7 +8,7 @@ function scrollFunction() {
       navbar.style.height = '8vh';
 
       buttons.forEach((button) => {
-        button.style.height = '2vh';
+        button.style.height = '1.5vh';
       })
 
     } else {

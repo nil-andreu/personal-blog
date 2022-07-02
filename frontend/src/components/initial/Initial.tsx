@@ -2,12 +2,13 @@ import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import Navbar from '../common/Navbar'
 import Journey from "../journey/Journey"
+import Introduction from "../introduction/Introduction"
 
 function Initial() {
   return (
       <Container>
           <Navbar />
-          <Dummy />
+          <Introduction />
           <Journey />
       </Container>
     
