@@ -24,13 +24,16 @@ If we run this utility for GitHub Actions:
 ```
 We will get an overview of all workflow we have defined, whether they are triggered via  push, pull request, ...
 
+# Terraform
+Infrastructure as a Code is a new way to create the cloud infrastructure.
+In this way, you define in code how the services should look like. For this, I am using Terraform for the automation &
+maintainance of the AWS cloud infrastructure.
 
-If we run this utility for GitHub Actions:
+For starting with it, we need first to download the necessary packages from the providers we are going to use:
 ```
-    gh run list
+    terraform init
 ```
-We will get an overview of all workflow we have defined, whether they are triggered via  push, pull request, ...
-
+This will install puligns to interact with the AWS API.
 
 # Docker && AWS
 I am using Docker to containerize my application, so it can be easily deployed on a server EC2 in AWS.
