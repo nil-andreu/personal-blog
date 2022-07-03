@@ -9,7 +9,7 @@ In the Makefile, you can find some automation of utilities for the backend:
     make test           # run tests with PyTest
 ```
 
-Some of the most relevant technos I am using are the following.
+Some of the most relevant technos I am using are the following, and some commands that are useful.
 
 # GitHub Actions
 To automate the test on when pushing the code to the respository.
@@ -40,10 +40,17 @@ Another useful command:
     terraform plan
 ```
 Will take a look to the code, and see which changes needs to be make. So it creates an execution plan.
+We could check if the configuration is valid with: *terraform validate*.
 
 And to apply this execution plan:
 ```
     terraform apply
+```
+Once applied, we can check the status of our infrastructure with: *terraform state list*.
+
+In case we wanted to destroy the instances:
+```
+    terraform destroy
 ```
 
 # Docker && AWS

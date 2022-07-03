@@ -16,7 +16,7 @@ provider "aws" {
 # Create a resouce: "<provider>_<resource>" "<name_to_this_resource>"
 resource "aws_instance" "server" {
   # All the config options
-  ami           = "ami-09e513e9eacab10c1"
+  ami           = "ami-0f7559f51d3a22167"
   instance_type = "t2.micro"
 
   tags = {
