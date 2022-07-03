@@ -3,7 +3,7 @@ from datetime import datetime
 from django.db import models
 from django.utils.text import slugify
 from django.core.validators import MaxValueValidator, MinValueValidator
-from .utils.file_utils import validate_file_extension, upload_file 
+from .utils.file_utils import validate_file_extension, upload_file, upload_image
 
 class Technology(models.Model):
     technology = models.CharField(max_length=200, unique=True, primary_key=True)
@@ -15,6 +15,7 @@ class Project(models.Model):
     summary: string = models.TextField(blank=True, null=True)
     technology = models.ManyToManyField(Technology)
     slug: string = models.SlugField()
+    preview = models.ImageField(upload_to=upload_image)  # Screenshot of how the app looks like
     github: string = models.URLField()
     publish: datetime = models.DateTimeField(auto_now_add=True)
     edited: datetime = models.DateTimeField(auto_now=True)

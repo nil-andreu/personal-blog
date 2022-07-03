@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@honkhonk/vite-plugin-svgr": "^1.1.0",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-scroll": "^1.8.3",
     "@types/react-vertical-timeline-component": "^3.3.3",
@@ -18,7 +19,8 @@
     "react-scroll": "^1.8.7",
     "react-vertical-timeline-component": "^3.5.2",
     "react3dtagcloud": "^0.2.2",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "vite-plugin-svgr": "^2.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

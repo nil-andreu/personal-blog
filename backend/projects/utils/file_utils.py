@@ -10,3 +10,7 @@ def validate_file_extension(value):
 def upload_file(instance, filename):
     import os
     return os.path.join('documents', instance.title, filename)
+
+def upload_image(instance, filename):
+    import os
+    return os.path.join('images', instance.title, filename)

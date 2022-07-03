@@ -4,6 +4,8 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import {ReactComponent as WorkIcon} from "../../assets/work.svg"
+import {ReactComponent as SchoolIcon} from "../../assets/work.svg"
 
 function Timeline() {
   return (
@@ -14,6 +16,7 @@ function Timeline() {
         contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
         date="2018 - 2022"
         iconStyle={{ background: "#005677", color: "#fff" }}
+        // icon={<SchoolIcon />}
       >
         <h3 className="vertical-timeline-element-title">
           Bachelor Degree In Business Administration
