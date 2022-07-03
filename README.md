@@ -35,6 +35,17 @@ For starting with it, we need first to download the necessary packages from the 
 ```
 This will install puligns to interact with the AWS API.
 
+Another useful command:
+```
+    terraform plan
+```
+Will take a look to the code, and see which changes needs to be make. So it creates an execution plan.
+
+And to apply this execution plan:
+```
+    terraform apply
+```
+
 # Docker && AWS
 I am using Docker to containerize my application, so it can be easily deployed on a server EC2 in AWS.
 The simple CI/CD pipeline will be the following when pushing to main branch:
