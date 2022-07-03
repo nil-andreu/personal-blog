@@ -11,12 +11,20 @@ In the Makefile, you can find some automation of utilities for the backend:
 
 Some of the most relevant technos I am using are the following, and some commands that are useful.
 
+
 # GitHub Actions
 To automate the test on when pushing the code to the respository.
 
 For the backend, it focuses on testing:
 - **Functionality**: that the code is working well
 - **Code Quality**: automating checks of the code quality and persistance with PEP8, as well as type hinting.
+
+If we run this utility for GitHub Actions:
+```
+    gh run list
+```
+We will get an overview of all workflow we have defined, whether they are triggered via  push, pull request, ...
+
 
 If we run this utility for GitHub Actions:
 ```

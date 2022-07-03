@@ -7,17 +7,17 @@ interface ButtonProps {
 
 function Button(props: ButtonProps) {
   return (
-    <Container id="button">{props.children}</Container>
+    <Container>{props.children}</Container>
   )
 }
 
 const Container = styled.div`
-    width: 10rem;
-    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius : 10px;
+    width: 10rem;
+    height: 3rem;
     background-color: ${props => props.theme.button};
 
     &:hover {

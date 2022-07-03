@@ -20,12 +20,6 @@ function Initial() {
 const Container = styled.div`
     width: 100vw;
     height: auto;
-    background-color: white;
-`
-
-const Dummy = styled.div`
-    height: 150vh;
-    width: 100vw;
 `
 
 export default Initial

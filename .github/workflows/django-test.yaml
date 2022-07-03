@@ -39,3 +39,8 @@ jobs:
           arguments: ' --exclude=test_post /backend/tests
             --exclude=* ./backend/blog/migrations
             --max-line-length=120'
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
