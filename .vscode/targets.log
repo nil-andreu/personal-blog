@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Fri Jul  1 18:42:46 2022
+# Make data base, printed on Sun Jul  3 18:44:02 2022
 
 # Variables
 
@@ -43,7 +43,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/5n/748nzcnx51q_d1_5j4_wrsf00000gr/T/vscode-ipc-96c051fd-321a-42f3-9a32-a16ba2f888cb.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/5n/748nzcnx51q_d1_5j4_wrsf00000gr/T/vscode-ipc-0d4266a3-9b23-4b11-a17c-ba56d6f53ed2.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -81,7 +81,7 @@ VSCODE_CODE_CACHE_PATH = /Users/nil.andreu/Library/Application Support/Code/Cach
 # environment
 LOGNAME = nil.andreu
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 CONDA_PROMPT_MODIFIER = (base) 
 # environment
@@ -173,9 +173,9 @@ LANG = C
 
 # Directories
 
-# . (device 16777231, inode 18362827): 9 files, no impossibilities.
+# . (device 16777231, inode 18362827): 14 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -247,6 +247,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Fri Jul  1 18:42:46 2022
+# Finished Make data base on Sun Jul  3 18:44:02 2022
 
  

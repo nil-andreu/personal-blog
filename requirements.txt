@@ -8,6 +8,7 @@ djangorestframework==3.13.1
 filelock==3.7.1
 iniconfig==1.1.1
 packaging==21.3
+Pillow==9.2.0
 pipenv==2022.6.7
 platformdirs==2.5.2
 pluggy==1.0.0
