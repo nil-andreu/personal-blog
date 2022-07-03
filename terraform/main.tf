@@ -20,13 +20,13 @@ resource "aws_instance" "server" {
   instance_type = "t2.micro"
 
   tags = {
-       Name     = "host_server"  # Name of the server
+       Name     = "host-server"  # Name of the server
   }
 }
 
 resource "aws_s3_bucket" "bucket" {
-    bucket      = "nil_andreu_bucket"
+    bucket      = "nil-andreu-bucket"
     tags        = {
-        Name    = "database_server"
+        Name    = "database-server"
     }
 }

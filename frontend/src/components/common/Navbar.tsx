@@ -27,7 +27,7 @@ function Navbar() {
             to={key}
             spy={true}
             smooth={true}
-            offset={-100}
+            // offset={-20}
             duration={500}
           >
             {textLink[key]}
