@@ -26,7 +26,7 @@ We will get an overview of all workflow we have defined, whether they are trigge
 
 # Terraform
 Infrastructure as a Code is a new way to create the cloud infrastructure.
-In this way, you define in code how the services should look like. For this, I am using Terraform for the automation &
+In this way, you define in code how the servers should be structured. For this, I am using Terraform for the automation &
 maintainance of the AWS cloud infrastructure.
 
 For starting with it, we need first to download the necessary packages from the providers we are going to use:
@@ -47,6 +47,7 @@ And to apply this execution plan:
     terraform apply
 ```
 Once applied, we can check the status of our infrastructure with: *terraform state list*.
+We could add the tag: --auto-approve to automatically create it, without asking in terminal for confirmation.
 
 In case we wanted to destroy the instances:
 ```

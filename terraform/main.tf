@@ -8,7 +8,7 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = var.region
+  region     = var.region
   access_key = var.db_username
   secret_key = var.db_password
 }
@@ -20,6 +20,13 @@ resource "aws_instance" "server" {
   instance_type = "t2.micro"
 
   tags = {
-       Name = "Web Server"  # Name of the server
+       Name     = "host_server"  # Name of the server
   }
+}
+
+resource "aws_s3_bucket" "bucket" {
+    bucket      = "nil_andreu_bucket"
+    tags        = {
+        Name    = "database_server"
+    }
 }
