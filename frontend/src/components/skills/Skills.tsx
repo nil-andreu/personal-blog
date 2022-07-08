@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from "styled-components"
-import Cloud from './Cloud'
+import Dashboard from './Dashboard'
+// import Cloud from './Cloud'
 
 function Skills() {
   return (
     <Container id="skills">
-        
+        <Dashboard />
     </Container>
   )
 }
