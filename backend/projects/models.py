@@ -44,6 +44,7 @@ class Difficulties(models.Model):
 class Resource(models.Model):
     title = models.CharField(max_length=300, blank=True, null=True, unique=True)
     description = models.TextField(blank=True, null=True)
+    learn = models.BooleanField(default=False)
     
     file = models.FileField(upload_to=upload_file, validators=[validate_file_extension])
 
