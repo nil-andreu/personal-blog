@@ -4,15 +4,9 @@ import SkillBar from "react-skillbars";
 
 import {
   CircularProgressbar,
-  CircularProgressbarWithChildren,
-  buildStyles,
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-
-// import AnimatedProgressProvider from "./AnimatedProgressProvider";
-// import ChangingProgressProvider from "./ChangingProgressProvider";
-
-// import RadialSeparators from "./RadialSeparators";
+import VisibilitySensor from "react-visibility-sensor";
 
 const skills1 = [
   {
@@ -47,6 +41,7 @@ const colors = {
 };
 
 function Dashboard() {
+    const text = "Communication"
   return (
     <Container>
       <SubContainer>
@@ -55,7 +50,25 @@ function Dashboard() {
       </SubContainer>
       <SubContainer>
         <h3>Professional Skills</h3>
-          
+        <VisibilitySensor>
+            {({ isVisible }: any) => {
+              const percentage = isVisible ? 90 : 0;
+              return (
+                <CircularProgressbarCustomize
+                  value={percentage}
+                  text={`${text}`}
+                  styles={{
+                    text: {
+                        // Text color
+                        fill: '#011C27',
+                        // Text size
+                        fontSize: '6px',
+                      },
+                  }}
+                />
+              );
+            }}
+          </VisibilitySensor>
       </SubContainer>
     </Container>
   );
@@ -82,19 +95,8 @@ const SkillBarCustom = styled(SkillBar)`
   }
 `;
 
-function Example(props: any) {
-    return (
-      <div style={{ marginBottom: 80 }}>
-        <hr style={{ border: "2px solid #ddd" }} />
-        <div style={{ marginTop: 30, display: "flex" }}>
-          <div style={{ width: "30%", paddingRight: 30 }}>{props.children}</div>
-          <div style={{ width: "70%" }}>
-            <h3 className="h5">{props.label}</h3>
-            <p>{props.description}</p>
-          </div>
-        </div>
-      </div>
-    );
-}
+const CircularProgressbarCustomize = styled(CircularProgressbar)`
+    font-size: 10px !important;
+`
 
 export default Dashboard;
