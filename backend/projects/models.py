@@ -8,6 +8,8 @@ from .utils.file_utils import validate_file_extension, upload_file, upload_image
 class Technology(models.Model):
     technology = models.CharField(max_length=200, unique=True, primary_key=True)
 
+    def __str__(self):
+        return self.technology
 
 # Create your models here.
 class Project(models.Model):
@@ -17,10 +19,14 @@ class Project(models.Model):
     slug: string = models.SlugField()
     preview = models.ImageField(upload_to=upload_image)  # Screenshot of how the app looks like
     github: string = models.URLField()
-    publish: datetime = models.DateTimeField(auto_now_add=True)
+    published: datetime = models.DateTimeField(auto_now_add=True)
     edited: datetime = models.DateTimeField(auto_now=True)
     status: bool = models.BooleanField(default=True)
     likes: int = models.IntegerField(default=0)
+    valoration: int = models.IntegerField(default=1, validators=[  # Valoration made by people
+            MaxValueValidator(10),
+            MinValueValidator(1)
+        ])
     difficulty: int = models.IntegerField(default=1, validators=[
             MaxValueValidator(10),
             MinValueValidator(1)
