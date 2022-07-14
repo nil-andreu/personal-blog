@@ -4,6 +4,7 @@ import Navbar from '../common/Navbar'
 import Journey from "../journey/Journey"
 import Introduction from "../introduction/Introduction"
 import Skills from '../skills/Skills'
+import Projects from "../projects/Projects"
 
 function Initial() {
   return (
@@ -12,6 +13,7 @@ function Initial() {
           <Introduction />
           <Journey />
           <Skills />
+          <Projects />
       </Container>
     
   )

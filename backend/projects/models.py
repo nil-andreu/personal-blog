@@ -11,12 +11,16 @@ class Technology(models.Model):
     def __str__(self):
         return self.technology
 
+    class Meta:
+        verbose_name = 'Technology'
+        verbose_name_plural = 'Technologies'
+
 # Create your models here.
 class Project(models.Model):
     title: string = models.CharField(max_length=300, blank=False, null=False, unique=True)
     summary: string = models.TextField(blank=True, null=True)
     technology = models.ManyToManyField(Technology)
-    slug: string = models.SlugField()
+    slug: string = models.SlugField(editable=False, blank=True)  # With editable = False, will not appear on admin
     preview = models.ImageField(upload_to=upload_image)  # Screenshot of how the app looks like
     github: string = models.URLField()
     published: datetime = models.DateTimeField(auto_now_add=True)
@@ -45,6 +49,10 @@ class Difficulties(models.Model):
     description = models.TextField()
     solution = models.TextField()
     project = models.ForeignKey(Project, on_delete=models.PROTECT)
+    
+    class Meta:
+        verbose_name = 'Difficulties'
+        verbose_name_plural = verbose_name
 
 
 class Resource(models.Model):
