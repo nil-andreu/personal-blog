@@ -12,7 +12,7 @@ function Button(props: ButtonProps) {
 }
 
 const Container = styled.div`
-    width: 10rem;
+    padding: 0 3rem;
     height: 3rem;
     display: flex;
     align-items: center;

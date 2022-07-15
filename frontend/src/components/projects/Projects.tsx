@@ -3,21 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import ProjectCard from "./ProjectCard";
 import gif from "../../assets/loader.gif";
-
-interface Project {
-  difficulty: number;
-  edited: string;
-  github: string;
-  id: number;
-  preview: string;
-  likes: number;
-  published: string;
-  status: boolean;
-  summary: string;
-  technology: string[];
-  title: string;
-  valoration: number;
-}
+import { Project } from "../../interfaces";
 
 function Projects() {
   const REACT_APP_API_URL = "http://localhost:8000/";
@@ -37,7 +23,27 @@ function Projects() {
     <Container>
       <Title>Projects</Title>
       {loaded ? (
-        <ProjectsContainer />
+        <ProjectsContainer>
+          {projects.map((project) => {
+            return (
+              <ProjectCard key={project.id}
+              
+                difficulty={project.difficulty}
+                edited={project.edited}
+                id={project.id}
+                github={project.github}
+                image={project.image}
+                likes={project.likes}
+                published={project.published}
+                status={project.status}
+                summary={project.summary}
+                technology={project.technology}
+                title={project.title}
+                valoration={project.valoration}
+              />
+            );
+          })}
+        </ProjectsContainer>
       ) : (
         <Loading>
           <img src={gif} alt="Loading" />
@@ -67,6 +73,10 @@ const ProjectsContainer = styled.div`
   width: 100vw;
   height: auto;
   margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 `;
 
 const Loading = styled.div`
@@ -78,5 +88,9 @@ const Loading = styled.div`
     height: auto;
   }
 `;
+
+// const ProjectCard = styled.div`
+
+// `
 
 export default Projects;

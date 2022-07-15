@@ -1,4 +1,5 @@
 import string
+from typing import BinaryIO
 from datetime import datetime
 from django.db import models
 from django.utils.text import slugify
@@ -17,16 +18,17 @@ class Technology(models.Model):
 
 # Create your models here.
 class Project(models.Model):
-    title: string = models.CharField(max_length=300, blank=False, null=False, unique=True)
-    summary: string = models.TextField(blank=True, null=True)
+    title: string = models.CharField(max_length=100, blank=False, null=False, unique=True)
+    summary: string = models.TextField(blank=True, null=True, max_length=300)
     technology = models.ManyToManyField(Technology)
     slug: string = models.SlugField(editable=False, blank=True)  # With editable = False, will not appear on admin
-    preview = models.ImageField(upload_to=upload_image)  # Screenshot of how the app looks like
+    image = models.ImageField(upload_to=upload_image, blank=True, null=True)  # Screenshot of how the app looks like
     github: string = models.URLField()
     published: datetime = models.DateTimeField(auto_now_add=True)
     edited: datetime = models.DateTimeField(auto_now=True)
     status: bool = models.BooleanField(default=True)
     likes: int = models.IntegerField(default=0)
+    # image: BinaryIO = models.ImageField(upload_to='images/%Y/%m/%d/', blank=True, null=True) # upload to images organized by year, month and date
     valoration: int = models.IntegerField(default=1, validators=[  # Valoration made by people
             MaxValueValidator(10),
             MinValueValidator(1)
