@@ -14,7 +14,7 @@ class CsrfExemptSessionAuthentication(SessionAuthentication):
 
 # View for listing all the posts
 class ProjectsListView(ListAPIView):
-    queryset = Project.objects.all().filter(status=True).order_by('-published', 'valoration')
+    queryset = Project.objects.all().filter(status=True).order_by('-valoration', '-published')
     serializer_class = ProjectSerializer
     lookup_field = 'slug' # will search for the slug
     permission_classes = (permissions.AllowAny, ) # all users can see

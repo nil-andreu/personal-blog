@@ -53,11 +53,14 @@ position: fixed;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+
   &:hover {
       // In the case of hover, we overwrite the scrollFunction values
       opacity: 1 !important;
       background-color: ${(props) => props.theme.background} !important;
   }
+
+  transition: background-color 2s, height 2s; 
 `;
 
 const TextLink = styled(AnimateLink)`
