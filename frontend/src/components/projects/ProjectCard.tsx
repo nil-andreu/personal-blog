@@ -37,12 +37,12 @@ const Container = styled.div`
   height: 50vh;
   padding-bottom: 5vh;
   background-color: white;
-  margin-bottom: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   border-radius: 10px;
+  margin: 0 3vw 10vh 3vw;
 `
 
 const CardTitle = styled.h5`

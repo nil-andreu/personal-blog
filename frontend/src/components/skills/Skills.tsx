@@ -6,15 +6,16 @@ import Dashboard from './Dashboard'
 function Skills() {
   return (
     <Container id="skills">
-        <Dashboard />
+      <Dashboard />
     </Container>
   )
 }
 
 const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  padding-top: 10vh;
 `
 
 export default Skills

@@ -1,5 +1,5 @@
 import React from 'react'
-import image from "../../assets/face.jpg"
+import image from "../../assets/nil_andreu2.jpg"
 import styled from "styled-components"
 
 function Introduction() {
@@ -12,7 +12,10 @@ function Introduction() {
                 and I am being more motivated to improve as the time passes.
             </Text>
         </ContainerText>
-        <Image src={image} alt="" />
+        <ContainerImage>
+            <Image src={image} alt="" />
+        </ContainerImage>
+        
     </Container>
   )
 }
@@ -45,10 +48,25 @@ const Text = styled.h4`
     margin: 5vh 0 0 5vw;
 `
 
-const Image = styled.img`
+const ContainerImage = styled.div`
     width: 35vw;
     height: 45vh;
-    margin: 15vh 0 0 0 ;
+  overflow: hidden;
+  margin: 15vh 0 0 0 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+`
+
+const Image = styled.img`
+    width: auto;
+  max-width: 25vw;
+  height: auto;
+  max-height: 45vh;
+  border-radius: 10px;
+    
 `
 
 export default Introduction
